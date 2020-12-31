@@ -25,8 +25,8 @@ excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Products
   - Pods
   - Frameworks
-  - "*/AppDelegate.swift"
-  - "*/SceneDelegate.swift"
+  - "*/*/AppDelegate.swift"
+  - "*/*/SceneDelegate.swift"
 analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
   - explicit_self
 

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ProductListViewController.swift
 //  productList
 //
 //  Created by Ivo Dutra on 31/12/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ProductListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
