@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Remove Storyboard
          guard let windowScene = (scene as? UIWindowScene) else { return }
          let window = UIWindow(windowScene: windowScene)
-         let viewController = ViewController()
+         let viewController = ProductListViewController()
          window.rootViewController = UINavigationController(rootViewController: viewController)
          self.window = window
          window.makeKeyAndVisible()
