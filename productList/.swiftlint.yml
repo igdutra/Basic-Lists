@@ -1,0 +1,86 @@
+disabled_rules: # rule identifiers to exclude from running
+  - identifier_name
+  - implicit_getter
+  - empty_count
+  #- redundant_string_enum_value
+  #- multiple_closures_with_trailing_closure
+  #- function_parameter_count
+  - trailing_whitespace
+opt_in_rules: # some rules are only opt-in
+  - empty_count # pode ser que tenha que desativar essa regra em alguns casos
+  - colon
+  - comma
+  - control_statement
+  - empty_parameters
+  - void_return
+  - closing_brace
+  - custom_rules
+  # Find all the available rules by running:
+  # swiftlint rules
+included: # paths to include during linting. `--path` is ignored if present.
+ # - Source
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+  - Products
+  - Pods
+  - Frameworks
+  - "*/AppDelegate.swift"
+  - "*/SceneDelegate.swift"
+analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
+  - explicit_self
+
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+force_cast: warning # implicitly
+force_try:
+  severity: warning # explicitly
+# rules that have both warning and error levels, can set just the warning level
+# implicitly
+line_length:
+    warning: 150
+    ignores_comments: true
+# they can set both implicitly with an array
+type_body_length:
+  - 300 # warning
+  - 400 # error
+# or they can set both explicitly
+file_length:
+  warning: 500
+  error: 1200
+function_body_length: 55
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 4 # only warning
+  max_length: # warning and error
+    warning: 40
+    error: 50
+  excluded:
+    - T # excluded via string
+  allowed_symbols: ["_"] # these are allowed in type names
+
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji, sonarqube, markdown)
+custom_rules:
+    comments_space:
+       name: "Space After Comment"
+       regex: '(^ *//\w+)'
+       message: "There should be a space after //"
+       severity: warning
+    comments_capitalized_ignore_possible_code:
+       name: "Capitalize First Word In Comment"
+       regex: "(^ +// +(?!swiftlint)[a-z]+)"
+       message: "The first word of a comment should be capitalized"
+       severity: warning
+    comments_space:
+        name: "Space After Comment"
+        regex: '(^ *//\w+)'
+        message: "There should be a space after //"
+        severity: warning
+    double_space:
+        include: "*.swift"
+        name: "Double Space"
+        regex: '([a-z,A-Z] \s+)'
+        message: "Double space between keywords"
+        match_kinds: keyword
+        severity: warning
