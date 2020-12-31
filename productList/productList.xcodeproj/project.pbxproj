@@ -14,6 +14,7 @@
 		9234463C259E7945002A2F26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9234463A259E7945002A2F26 /* LaunchScreen.storyboard */; };
 		92344647259E7946002A2F26 /* productListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92344646259E7946002A2F26 /* productListTests.swift */; };
 		92344652259E7946002A2F26 /* productListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92344651259E7946002A2F26 /* productListUITests.swift */; };
+		92344678259E7E1A002A2F26 /* ProductListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92344677259E7E1A002A2F26 /* ProductListView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9234464D259E7946002A2F26 /* productListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = productListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92344651259E7946002A2F26 /* productListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productListUITests.swift; sourceTree = "<group>"; };
 		92344653259E7946002A2F26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92344677259E7E1A002A2F26 /* ProductListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		92344669259E7BC8002A2F26 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				92344677259E7E1A002A2F26 /* ProductListView.xib */,
 				92344633259E7945002A2F26 /* ProductListViewController.swift */,
 			);
 			path = Modules;
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9234463C259E7945002A2F26 /* LaunchScreen.storyboard in Resources */,
+				92344678259E7E1A002A2F26 /* ProductListView.xib in Resources */,
 				92344639259E7945002A2F26 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
