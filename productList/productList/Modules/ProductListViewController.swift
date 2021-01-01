@@ -13,6 +13,7 @@ class ProductListViewController: UIViewController {
     // And the Custom Class to this ViewController
     @IBOutlet weak var tableView: UITableView!
     private var products: [Product] = []
+    let identifier = "listCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,8 @@ class ProductListViewController: UIViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        let nib = UINib(nibName: "ProductListCell", bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: identifier)
         
         let service = ProductsService()
         service.getProducts { [weak self] (result) in
@@ -38,7 +41,7 @@ class ProductListViewController: UIViewController {
 
 }
 
-// MARK: - TableView
+    // MARK: - TableView
 
 extension ProductListViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -47,7 +50,14 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        guard let productCell = tableView.dequeueReusableCell(withIdentifier: identifier,
+                                                              for: indexPath) as? ProductsListCell else {
+            return UITableViewCell()
+        }
+        
+        productCell.setup(with: products[indexPath.row])
+
+        return productCell
     }
 
 }
