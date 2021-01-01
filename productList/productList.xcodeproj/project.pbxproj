@@ -15,6 +15,8 @@
 		92344647259E7946002A2F26 /* productListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92344646259E7946002A2F26 /* productListTests.swift */; };
 		92344652259E7946002A2F26 /* productListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92344651259E7946002A2F26 /* productListUITests.swift */; };
 		92344678259E7E1A002A2F26 /* ProductListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92344677259E7E1A002A2F26 /* ProductListView.xib */; };
+		926EAC3D259FB61400F7543E /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926EAC3C259FB61400F7543E /* ProductsService.swift */; };
+		926EAC46259FB66100F7543E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926EAC45259FB66100F7543E /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		92344651259E7946002A2F26 /* productListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productListUITests.swift; sourceTree = "<group>"; };
 		92344653259E7946002A2F26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92344677259E7E1A002A2F26 /* ProductListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListView.xib; sourceTree = "<group>"; };
+		926EAC3C259FB61400F7543E /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
+		926EAC45259FB66100F7543E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 			children = (
 				92344669259E7BC8002A2F26 /* Modules */,
 				9234466A259E7BD1002A2F26 /* Components */,
+				926EAC3B259FB5FC00F7543E /* Services */,
 				9234466B259E7BD7002A2F26 /* Utilities */,
 				9234466C259E7BE2002A2F26 /* Resources */,
 				9234466D259E7BFC002A2F26 /* App */,
@@ -146,6 +151,7 @@
 		9234466B259E7BD7002A2F26 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				926EAC44259FB65500F7543E /* Models */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -166,6 +172,22 @@
 				92344631259E7945002A2F26 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		926EAC3B259FB5FC00F7543E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				926EAC3C259FB61400F7543E /* ProductsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		926EAC44259FB65500F7543E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				926EAC45259FB66100F7543E /* Product.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +343,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				92344634259E7945002A2F26 /* ProductListViewController.swift in Sources */,
+				926EAC3D259FB61400F7543E /* ProductsService.swift in Sources */,
+				926EAC46259FB66100F7543E /* Product.swift in Sources */,
 				92344630259E7945002A2F26 /* AppDelegate.swift in Sources */,
 				92344632259E7945002A2F26 /* SceneDelegate.swift in Sources */,
 			);
@@ -493,6 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CWDLGQQ2J;
 				INFOPLIST_FILE = productList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -500,7 +525,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Ivo-Dutra.productList";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -512,6 +537,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CWDLGQQ2J;
 				INFOPLIST_FILE = productList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -519,7 +545,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Ivo-Dutra.productList";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -531,7 +557,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CWDLGQQ2J;
 				INFOPLIST_FILE = productListTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -553,7 +579,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CWDLGQQ2J;
 				INFOPLIST_FILE = productListTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -574,6 +600,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CWDLGQQ2J;
 				INFOPLIST_FILE = productListUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -594,6 +621,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CWDLGQQ2J;
 				INFOPLIST_FILE = productListUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
