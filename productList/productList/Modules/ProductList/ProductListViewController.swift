@@ -28,7 +28,7 @@ class ProductListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "MVC + ViewCode"
+        self.title = "MVVM + ViewCode"
         
         let viewModel = ProductListViewModel()
         viewModel.delegate = myView
