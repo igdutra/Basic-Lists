@@ -18,6 +18,7 @@
 		92E1D0DD25A0B2CE00A551B3 /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1D0DC25A0B2CE00A551B3 /* ViewCodable.swift */; };
 		92E1D0E325A0BBE700A551B3 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1D0E125A0BBE700A551B3 /* Constraints.swift */; };
 		92E1D0E425A0BBE700A551B3 /* Constraints+Superview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1D0E225A0BBE700A551B3 /* Constraints+Superview.swift */; };
+		92E1D0EA25A0C13D00A551B3 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1D0E925A0C13D00A551B3 /* ProductListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		92E1D0DC25A0B2CE00A551B3 /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
 		92E1D0E125A0BBE700A551B3 /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		92E1D0E225A0BBE700A551B3 /* Constraints+Superview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraints+Superview.swift"; sourceTree = "<group>"; };
+		92E1D0E925A0C13D00A551B3 /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 		92E1D0D125A0132C00A551B3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				92E1D0E925A0C13D00A551B3 /* ProductListCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				92344634259E7945002A2F26 /* ProductListViewController.swift in Sources */,
 				92344630259E7945002A2F26 /* AppDelegate.swift in Sources */,
 				92E1D0E325A0BBE700A551B3 /* Constraints.swift in Sources */,
+				92E1D0EA25A0C13D00A551B3 /* ProductListCell.swift in Sources */,
 				92344632259E7945002A2F26 /* SceneDelegate.swift in Sources */,
 				92E1D0E425A0BBE700A551B3 /* Constraints+Superview.swift in Sources */,
 			);
