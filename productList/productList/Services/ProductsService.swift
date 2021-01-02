@@ -6,7 +6,11 @@
 //
 import Foundation
 
-class ProductsService {
+protocol ProductsServiceProtocol {
+    func getProducts(completion: @escaping (Result<[Product], Error>) -> Void)
+}
+
+class ProductsService: ProductsServiceProtocol {
 
     func getProducts(completion: @escaping (Result<[Product], Error>) -> Void) {
         guard let url = URL(string: "https://private-8f4dda-testeabi.apiary-mock.com/produtos") else {

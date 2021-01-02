@@ -7,6 +7,11 @@
 
 import UIKit
 
+/// ViewModel's Delegate is the View
+protocol ProductListViewModelDelegate: AnyObject {
+    func reloadData()
+}
+
 class ProductListView: UIView {
     
     // MARK: - Properties
@@ -32,10 +37,14 @@ class ProductListView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+}
+
     // MARK: - Delegate
-    
+
+extension ProductListView: ProductListViewModelDelegate {
+  
     func reloadData() {
+        // TODO: search for other functions than reload data
         tableView.reloadData()
     }
 }

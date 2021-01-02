@@ -28,10 +28,10 @@ class ProductListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "MVVM + ViewCode"
+        self.title = "MVVM + Dependency Injection"
         
-        let viewModel = ProductListViewModel()
-        viewModel.delegate = myView
+        let viewModel = ProductListViewModel(services: ProductsService(),
+                                             delegate: myView)
         myView.viewModel = viewModel
     }
 }
