@@ -35,8 +35,26 @@ class ProductListViewController: UIViewController {
         myView.tableView.delegate = self
         myView.tableView.dataSource = self
         myView.tableView.register(ProductListCell.self, forCellReuseIdentifier: cellId)
+        
+        getProducts()
     }
     
+    // MARK: - Get Products
+    
+    func getProducts() {
+        let service = ProductsService()
+        service.getProducts { [weak self] (result) in
+            guard let self = self else { return }
+            // TODO: Bonus: activity indicator
+            switch result {
+            case .success(let products):
+                self.products = products
+                self.myView.tableView.reloadData() // TODO: search for other functions than reload data
+            case .failure:
+                print("No Products were returned")
+            }
+        }
+    }
 }
 
     // MARK: - Table View
@@ -54,7 +72,6 @@ extension ProductListViewController: UITableViewDataSource {
         guard let productCell = tableView.dequeueReusableCell(withIdentifier: cellId,
                                                               for: indexPath) as? ProductListCell else {  return UITableViewCell() }
 
-        // Obs: no API call yet, so rows are still blank
         productCell.configureCell(with: products[indexPath.row])
 
         return productCell

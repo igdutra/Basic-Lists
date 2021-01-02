@@ -22,6 +22,7 @@
 		92E1D0F225A0C6A000A551B3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1D0F125A0C6A000A551B3 /* Product.swift */; };
 		92E1D0F725A0C70600A551B3 /* Double+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1D0F625A0C70600A551B3 /* Double+String.swift */; };
 		92E1D0FC25A0C72400A551B3 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1D0FB25A0C72400A551B3 /* UIImageView+URL.swift */; };
+		92E1D10125A0C9A100A551B3 /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1D10025A0C9A100A551B3 /* ProductsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		92E1D0F125A0C6A000A551B3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		92E1D0F625A0C70600A551B3 /* Double+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+String.swift"; sourceTree = "<group>"; };
 		92E1D0FB25A0C72400A551B3 /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
+		92E1D10025A0C9A100A551B3 /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 		92E1D0D525A0135F00A551B3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				92E1D10025A0C9A100A551B3 /* ProductsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				92E1D0F225A0C6A000A551B3 /* Product.swift in Sources */,
 				92E1D0F725A0C70600A551B3 /* Double+String.swift in Sources */,
 				92344634259E7945002A2F26 /* ProductListViewController.swift in Sources */,
+				92E1D10125A0C9A100A551B3 /* ProductsService.swift in Sources */,
 				92344630259E7945002A2F26 /* AppDelegate.swift in Sources */,
 				92E1D0E325A0BBE700A551B3 /* Constraints.swift in Sources */,
 				92E1D0EA25A0C13D00A551B3 /* ProductListCell.swift in Sources */,

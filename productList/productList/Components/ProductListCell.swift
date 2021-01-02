@@ -61,7 +61,7 @@ extension ProductListCell: ViewCodable {
         subTitleLabel.text = product.description
         priceLabel.text = product.price.localized
         productImageView.from(url: product.image)
-        priceLabel.textColor = product.discount ? .systemGreen : .black
+        priceLabel.textColor = product.discount ? .systemGreen : .gray
     }
     
     func setupHierarchy() {
@@ -69,6 +69,8 @@ extension ProductListCell: ViewCodable {
     }
     
     func setupConstraints() {
+        
+        self.heightTo(60)
         
         productImageView
             .centerVerticalToSuperView()
