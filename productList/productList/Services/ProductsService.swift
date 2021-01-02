@@ -11,9 +11,11 @@ protocol ProductsServiceProtocol {
 }
 
 class ProductsService: ProductsServiceProtocol {
+    
+    var urlString = "https://private-8f4dda-testeabi.apiary-mock.com/produtos"
 
     func getProducts(completion: @escaping (Result<[Product], Error>) -> Void) {
-        guard let url = URL(string: "https://private-8f4dda-testeabi.apiary-mock.com/produtos") else {
+        guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "", code: 404, userInfo: nil)))
             return
         }
