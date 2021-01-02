@@ -10,6 +10,8 @@ import UIKit
 class ProductListView: UIView {
     
     // MARK: - Properties
+    
+    var viewModel: ProductListViewModel?
     private let cellId: String = "productListCell"
     
     // MARK: - UI Elements
@@ -30,6 +32,12 @@ class ProductListView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Delegate
+    
+    func reloadData() {
+        tableView.reloadData()
+    }
 }
 
     // MARK: - Table View
@@ -40,18 +48,19 @@ extension ProductListView: UITableViewDelegate { }
 extension ProductListView: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        products.count
-        1
+        guard let viewModel = viewModel else { return 0 }
+        return viewModel.products.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let productCell = tableView.dequeueReusableCell(withIdentifier: cellId,
-//                                                              for: indexPath) as? ProductListCell else {  return UITableViewCell() }
-//
-//        productCell.configureCell(with: products[indexPath.row])
-//
-//        return productCell
-        UITableViewCell()
+        guard let viewModel = viewModel else { return UITableViewCell() }
+        
+        guard let productCell = tableView.dequeueReusableCell(withIdentifier: cellId,
+                                                              for: indexPath) as? ProductListCell else {  return UITableViewCell() }
+
+        productCell.configureCell(with: viewModel.products[indexPath.row])
+
+        return productCell
     }
 
 }

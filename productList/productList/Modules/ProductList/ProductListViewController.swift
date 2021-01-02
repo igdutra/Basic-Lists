@@ -7,12 +7,10 @@
 
 import UIKit
 
+/// ViewController is now only responsible for instanciating View and ViewModel
 class ProductListViewController: UIViewController {
     
     // MARK: - Properties
-    
-    private var products: [Product] = []
-    private let cellId: String = "productListCell"
     
     private var myView: ProductListView {
         // swiftlint:disable force_cast
@@ -31,22 +29,9 @@ class ProductListViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "MVC + ViewCode"
-    }
-    
-    // MARK: - Get Products
-    
-    func getProducts() {
-        let service = ProductsService()
-        service.getProducts { [weak self] (result) in
-            guard let self = self else { return }
-            // TODO: Bonus: activity indicator
-            switch result {
-            case .success(let products):
-                self.products = products
-                self.myView.tableView.reloadData() // TODO: search for other functions than reload data
-            case .failure:
-                print("No Products were returned")
-            }
-        }
+        
+        let viewModel = ProductListViewModel()
+        viewModel.delegate = myView
+        myView.viewModel = viewModel
     }
 }
