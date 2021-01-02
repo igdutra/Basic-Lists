@@ -98,8 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				92344669259E7BC8002A2F26 /* Modules */,
-				9234466A259E7BD1002A2F26 /* Components */,
-				9234466B259E7BD7002A2F26 /* Utilities */,
 				9234466C259E7BE2002A2F26 /* Resources */,
 				9234466D259E7BFC002A2F26 /* App */,
 				9234463D259E7945002A2F26 /* Info.plist */,
@@ -131,20 +129,6 @@
 				92344633259E7945002A2F26 /* ProductListViewController.swift */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		9234466A259E7BD1002A2F26 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		9234466B259E7BD7002A2F26 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		9234466C259E7BE2002A2F26 /* Resources */ = {
@@ -489,6 +473,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CWDLGQQ2J;
 				INFOPLIST_FILE = productList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -508,6 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CWDLGQQ2J;
 				INFOPLIST_FILE = productList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -527,7 +513,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CWDLGQQ2J;
 				INFOPLIST_FILE = productListTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -549,7 +535,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CWDLGQQ2J;
 				INFOPLIST_FILE = productListTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -570,6 +556,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CWDLGQQ2J;
 				INFOPLIST_FILE = productListUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -590,6 +577,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5CWDLGQQ2J;
 				INFOPLIST_FILE = productListUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
