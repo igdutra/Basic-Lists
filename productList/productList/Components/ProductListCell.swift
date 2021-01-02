@@ -56,6 +56,14 @@ class ProductListCell: UITableViewCell {
 
 extension ProductListCell: ViewCodable {
     
+    func configureCell(with product: Product) {
+        titleLabel.text = product.product
+        subTitleLabel.text = product.description
+        priceLabel.text = product.price.localized
+        productImageView.from(url: product.image)
+        priceLabel.textColor = product.discount ? .systemGreen : .black
+    }
+    
     func setupHierarchy() {
         self.addSubviews([productImageView, titleLabel, subTitleLabel, priceLabel])
     }

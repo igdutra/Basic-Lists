@@ -11,7 +11,8 @@ class ProductListViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var products: [String] = ["placeholder"]
+    private var products: [Product] = []
+    private let cellId: String = "productListCell"
     
     private var myView: ProductListView {
         // swiftlint:disable force_cast
@@ -33,6 +34,7 @@ class ProductListViewController: UIViewController {
        
         myView.tableView.delegate = self
         myView.tableView.dataSource = self
+        myView.tableView.register(ProductListCell.self, forCellReuseIdentifier: cellId)
     }
     
 }
@@ -49,7 +51,13 @@ extension ProductListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        guard let productCell = tableView.dequeueReusableCell(withIdentifier: cellId,
+                                                              for: indexPath) as? ProductListCell else {  return UITableViewCell() }
+
+        // Obs: no API call yet, so rows are still blank
+        productCell.configureCell(with: products[indexPath.row])
+
+        return productCell
     }
 
 }
