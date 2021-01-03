@@ -19,20 +19,20 @@ class ProductListCell: UITableViewCell {
         return imageView
     }()
 
-    private lazy var titleLabel: UILabel = {
+    lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         return label
     }()
 
-    private lazy var subTitleLabel: UILabel = {
+    lazy var subTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         label.textColor = .darkGray
         return label
     }()
 
-    private lazy var priceLabel: UILabel = {
+    lazy var priceLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         label.textColor = .darkGray
