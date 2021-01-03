@@ -11,6 +11,9 @@
 		92208F7E25A125110087CF18 /* ProductMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92208F7C25A125110087CF18 /* ProductMock.swift */; };
 		92208F8925A1409A0087CF18 /* ProductListCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92208F8825A1409A0087CF18 /* ProductListCellTests.swift */; };
 		92208F8D25A144730087CF18 /* singleProduct.json in Resources */ = {isa = PBXBuildFile; fileRef = 92208F7B25A125110087CF18 /* singleProduct.json */; };
+		92208F9225A146650087CF18 /* ProductListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92208F9125A146650087CF18 /* ProductListViewModelTests.swift */; };
+		92208F9725A146AF0087CF18 /* ProductsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92208F9625A146AF0087CF18 /* ProductsServiceMock.swift */; };
+		92208F9C25A147240087CF18 /* ProducListViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92208F9B25A147240087CF18 /* ProducListViewMock.swift */; };
 		92344630259E7945002A2F26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234462F259E7945002A2F26 /* AppDelegate.swift */; };
 		92344632259E7945002A2F26 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92344631259E7945002A2F26 /* SceneDelegate.swift */; };
 		92344634259E7945002A2F26 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92344633259E7945002A2F26 /* ProductListViewController.swift */; };
@@ -51,6 +54,9 @@
 		92208F7B25A125110087CF18 /* singleProduct.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = singleProduct.json; sourceTree = "<group>"; };
 		92208F7C25A125110087CF18 /* ProductMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductMock.swift; sourceTree = "<group>"; };
 		92208F8825A1409A0087CF18 /* ProductListCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCellTests.swift; sourceTree = "<group>"; };
+		92208F9125A146650087CF18 /* ProductListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModelTests.swift; sourceTree = "<group>"; };
+		92208F9625A146AF0087CF18 /* ProductsServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsServiceMock.swift; sourceTree = "<group>"; };
+		92208F9B25A147240087CF18 /* ProducListViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProducListViewMock.swift; sourceTree = "<group>"; };
 		9234462C259E7945002A2F26 /* productList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = productList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9234462F259E7945002A2F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92344631259E7945002A2F26 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +110,8 @@
 		92208F7A25A125070087CF18 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				92208F9625A146AF0087CF18 /* ProductsServiceMock.swift */,
+				92208F9B25A147240087CF18 /* ProducListViewMock.swift */,
 				92208F7C25A125110087CF18 /* ProductMock.swift */,
 				92208F7B25A125110087CF18 /* singleProduct.json */,
 			);
@@ -257,6 +265,7 @@
 		92F0E55825A119BA0044616C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				92208F9125A146650087CF18 /* ProductListViewModelTests.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -452,7 +461,10 @@
 			files = (
 				92F0E55C25A119EB0044616C /* ProductsServiceTests.swift in Sources */,
 				92208F8925A1409A0087CF18 /* ProductListCellTests.swift in Sources */,
+				92208F9725A146AF0087CF18 /* ProductsServiceMock.swift in Sources */,
+				92208F9225A146650087CF18 /* ProductListViewModelTests.swift in Sources */,
 				92208F7E25A125110087CF18 /* ProductMock.swift in Sources */,
+				92208F9C25A147240087CF18 /* ProducListViewMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
