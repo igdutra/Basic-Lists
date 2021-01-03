@@ -93,7 +93,8 @@ extension ProductListView: ViewCodable {
     }
     
     func setupAcessibilityIdentifiers() {
-        // No UI Tests at the moment
+        accessibilityIdentifier = AccessibilityIdentifiers.productListView.value
+        tableView.accessibilityIdentifier = AccessibilityIdentifiers.tableView.value
     }
     
 }

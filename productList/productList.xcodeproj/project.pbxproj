@@ -31,6 +31,7 @@
 		92E1D0FC25A0C72400A551B3 /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1D0FB25A0C72400A551B3 /* UIImageView+URL.swift */; };
 		92E1D10125A0C9A100A551B3 /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1D10025A0C9A100A551B3 /* ProductsService.swift */; };
 		92F0E55C25A119EB0044616C /* ProductsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F0E55B25A119EB0044616C /* ProductsServiceTests.swift */; };
+		92FB5D8F25A1597800B5D816 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB5D8E25A1597800B5D816 /* AccessibilityIdentifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		92E1D0FB25A0C72400A551B3 /* UIImageView+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 		92E1D10025A0C9A100A551B3 /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
 		92F0E55B25A119EB0044616C /* ProductsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsServiceTests.swift; sourceTree = "<group>"; };
+		92FB5D8E25A1597800B5D816 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 				92E1D0DB25A0B16700A551B3 /* Protocols */,
 				92E1D0D425A0135700A551B3 /* Models */,
 				92E1D0D325A0135100A551B3 /* Extensions */,
+				92FB5D8E25A1597800B5D816 /* AccessibilityIdentifiers.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				92E1D0E325A0BBE700A551B3 /* Constraints.swift in Sources */,
 				92E1D0EA25A0C13D00A551B3 /* ProductListCell.swift in Sources */,
 				92344632259E7945002A2F26 /* SceneDelegate.swift in Sources */,
+				92FB5D8F25A1597800B5D816 /* AccessibilityIdentifiers.swift in Sources */,
 				92E1D0FC25A0C72400A551B3 /* UIImageView+URL.swift in Sources */,
 				92E1D0E425A0BBE700A551B3 /* Constraints+Superview.swift in Sources */,
 			);

@@ -62,6 +62,13 @@ extension ProductListCell: ViewCodable {
         priceLabel.text = product.price.localized
         productImageView.from(url: product.image)
         priceLabel.textColor = product.discount ? .systemGreen : .gray
+        
+        // Indentifiers
+        accessibilityIdentifier = product.product
+        titleLabel.accessibilityIdentifier = product.product
+        subTitleLabel.accessibilityIdentifier = product.description
+        priceLabel.accessibilityIdentifier = product.price.localized
+        productImageView.accessibilityIdentifier = product.product
     }
     
     func setupHierarchy() {
@@ -92,6 +99,6 @@ extension ProductListCell: ViewCodable {
     }
     
     func setupAcessibilityIdentifiers() {
-        // No UI Tests at the moment
+        // Done inside configureCell
     }
 }
