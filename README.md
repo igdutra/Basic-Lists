@@ -18,3 +18,5 @@ Explore the branches to see the same project written in different forms:
     * Unit tests for ViewModel, Service and TableViewCell using Mocks
 6. **uiTests**:
     * Basic UI Test for a Label and a tap
+7. **mvvm-improvement**:
+    * A View should not hold reference to the Model. Some properties are now private, exposing public methods 
