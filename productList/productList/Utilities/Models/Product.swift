@@ -6,15 +6,17 @@
 //
 import Foundation
 
+// TODO: where should this be?
+
 struct Product: Codable {
-    let product: String
+    let name: String
     let description: String
     let price: Double
     let discount: Bool
     let image: String
     
     enum CodingKeys: String, CodingKey {
-        case product = "produto"
+        case name = "produto"
         case description = "descricao"
         case price = "preco"
         case discount = "desconto"

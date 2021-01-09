@@ -20,7 +20,7 @@ class ProductsServiceMock: ProductsServiceProtocol {
     
     func getProducts(completion: @escaping (Result<[Product], Error>) -> Void) {
         
-        guard let product = ProductMock().product else { return }
+        guard let product = ProductMock().getProduct() else { return }
         let error = MockError.getProduct
  
         if !shouldProduceError {

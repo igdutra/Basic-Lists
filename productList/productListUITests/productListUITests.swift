@@ -30,7 +30,7 @@ class ProductListUITests: XCTestCase {
      The entire element subtree will be printed out.
      
      */
-
+    
     func testLabelExists() {
         XCTAssert(app.staticTexts["Skol"].exists)
     }

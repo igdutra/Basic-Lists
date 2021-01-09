@@ -53,7 +53,7 @@ class ProductsServiceTests: XCTestCase {
 
         sut.getProducts { (result) in
             switch result {
-            case .success(let product):
+            case .success:
                 XCTFail("Should not return success")
             case .failure(let error):
                 XCTAssertNotNil(error)

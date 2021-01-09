@@ -7,8 +7,10 @@
 
 import Foundation
 
+// TODO: constants should be here?
+
 enum AccessibilityIdentifiers {
-    // Product List View
+    // Cases for Product List View
     case productListView
     case tableView
     

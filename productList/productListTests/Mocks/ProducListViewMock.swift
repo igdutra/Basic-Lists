@@ -12,7 +12,7 @@ import XCTest
 /// ViewModel calls reloadData() method only when result is success
 class ProducListViewMock: ProductListViewModelDelegate {
   
-    var wasReloadDataCalled = false
+    var wasReloadDataCalled = false 
     
     func reloadData() {
         wasReloadDataCalled = true

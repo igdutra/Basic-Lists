@@ -16,7 +16,7 @@ class ProductListView: UIView {
     
     // MARK: - Properties
     
-    var viewModel: ProductListViewModel?
+    var viewModel: ProductListViewModelProtocol?
     private let cellId: String = "productListCell"
     
     // MARK: - UI Elements
@@ -44,7 +44,6 @@ class ProductListView: UIView {
 extension ProductListView: ProductListViewModelDelegate {
   
     func reloadData() {
-        // TODO: search for other functions than reload data
         tableView.reloadData()
     }
 }
@@ -58,16 +57,20 @@ extension ProductListView: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let viewModel = viewModel else { return 0 }
-        return viewModel.products.count
+        // Here also the reference (dependency) to the Model was changed
+        return viewModel.getCount()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let viewModel = viewModel else { return UITableViewCell() }
         
-        guard let productCell = tableView.dequeueReusableCell(withIdentifier: cellId,
-                                                              for: indexPath) as? ProductListCell else {  return UITableViewCell() }
+        guard let productCell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? ProductListCell else { return UITableViewCell() }
 
-        productCell.configureCell(with: viewModel.products[indexPath.row])
+        // The old View necessity to now the ProductListCellViewModel was removed
+        // All logic is created by the viewModel
+        let product = viewModel.getProduct(at: indexPath.row)
+        let cellViewModel = viewModel.createCellViewModel(from: product)
+        productCell.viewModel = cellViewModel
 
         return productCell
     }

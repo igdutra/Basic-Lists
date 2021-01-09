@@ -12,26 +12,51 @@ class ProductListViewController: UIViewController {
     
     // MARK: - Properties
     
+    var viewModel: ProductListViewModelProtocol? 
+    
     private var myView: ProductListView {
         // swiftlint:disable force_cast
         return view as! ProductListView
         // swiftlint:enable force_cast
     }
+
+    /*
+     This code inside if DEBUG will compile only in DEBUG mode, not for the release
+     Since this convenience init is used only for unit test purposes
+     Alternative: expose a factoryMethod to construct the viewController on AppDelegate
+     */
+    #if DEBUG
+    // MARK: - Init
+    
+    // Inject the viewModel as well in order to test this viewController
+    convenience init(viewModel vm: ProductListViewModelProtocol) {
+        self.init(nibName: nil, bundle: nil)
+        
+        viewModel = vm
+    }
+    #endif
     
     // MARK: - Life Cycle
 
     override func loadView() {
         let myView = ProductListView()
-        self.view = myView
+        view = myView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "MVVM + Dependency Injection"
-        
-        let viewModel = ProductListViewModel(services: ProductsService(),
-                                             delegate: myView)
+        title = "MVVM Improvements?"
+
+        // Inside SceneDelegate, this viewController is initialized without it's viewModel, so it is nil
+        if viewModel == nil {
+            viewModel = ProductListViewModel()
+        }
+
+        // After the ViewControllers init, when the ProductListView is constructed,
+        // Only then set the viewModel's delegate
+        viewModel?.delegate = myView
         myView.viewModel = viewModel
     }
+    
 }

@@ -9,6 +9,15 @@ import UIKit
 
 class ProductListCell: UITableViewCell {
     
+    // MARK: - Properties
+    
+    // When viewModel is set, configureCell will be called
+    var viewModel: ProductListCellViewModelProtocol? {
+        didSet {
+            configureCell()
+        }
+    }
+    
     // MARK: - UI Elements
     
     // Obs: translatesAutoresizingMaskIntoConstraints = false was set in addSubviews
@@ -56,19 +65,23 @@ class ProductListCell: UITableViewCell {
 
 extension ProductListCell: ViewCodable {
     
-    func configureCell(with product: Product) {
-        titleLabel.text = product.product
-        subTitleLabel.text = product.description
-        priceLabel.text = product.price.localized
-        productImageView.from(url: product.image)
-        priceLabel.textColor = product.discount ? .systemGreen : .gray
+    // ConfigureCell uses now its ViewModel
+    // Cell should not hold a reference to the Model
+    func configureCell() {
+        guard let viewModel = viewModel else { return }
+        
+        titleLabel.text = viewModel.name
+        subTitleLabel.text = viewModel.description
+        priceLabel.text = viewModel.price
+        productImageView.from(url: viewModel.image)
+        priceLabel.textColor = viewModel.discount ? .systemGreen : .gray
         
         // Indentifiers
-        accessibilityIdentifier = product.product
-        titleLabel.accessibilityIdentifier = product.product
-        subTitleLabel.accessibilityIdentifier = product.description
-        priceLabel.accessibilityIdentifier = product.price.localized
-        productImageView.accessibilityIdentifier = product.product
+        accessibilityIdentifier = viewModel.name
+        titleLabel.accessibilityIdentifier = viewModel.name
+        subTitleLabel.accessibilityIdentifier = viewModel.description
+        priceLabel.accessibilityIdentifier = viewModel.price
+        productImageView.accessibilityIdentifier = viewModel.name
     }
     
     func setupHierarchy() {

@@ -12,15 +12,18 @@ class ProductListCellTests: XCTestCase {
 
     var sut: ProductListCell!
     var productMock: Product!
+    var viewModel: ProductListCellViewModelMock!
 
     override func setUp() {
         super.setUp()
         sut = ProductListCell()
 
         // Preload view with mocked infos
-        guard let product = ProductMock().product else { XCTFail("Could not load info"); return }
+        guard let product = ProductMock().getProduct() else { XCTFail("Could not load info"); return }
         productMock = product
-        sut.configureCell(with: productMock)
+        
+        let cellViewModel = ProductListCellViewModelMock(product: productMock)
+        sut.viewModel = cellViewModel
     }
 
     override func tearDown() {
@@ -35,7 +38,7 @@ class ProductListCellTests: XCTestCase {
     // Maybe not the best approach
 
     func testTitleLabel() {
-        XCTAssertEqual(sut.titleLabel.text, productMock.product)
+        XCTAssertEqual(sut.titleLabel.text, productMock.name)
     }
 
     func testSubTitleLabel() {

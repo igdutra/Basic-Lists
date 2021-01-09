@@ -11,7 +11,7 @@ import Foundation
 /// Mock a single product from a JSON file
 class ProductMock {
 
-    var product: Product?
+    private var product: Product?
 
     init() {
         product = decodeFromJSON()
@@ -42,6 +42,10 @@ class ProductMock {
         }
 
         return product
+    }
+
+    func getProduct() -> Product? {
+        self.product
     }
 
 }
