@@ -10,17 +10,21 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var coordinator: ProductListCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
+
+        let navigationController = UINavigationController()
+
+        // Set initial coordinator
+        coordinator = ProductListCoordinator(navigationController: navigationController)
+        coordinator?.start()
+
         // Remove Storyboard
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: windowScene)
-       
-        let viewController = ProductListViewController()
-        window.rootViewController = UINavigationController(rootViewController: viewController)
-        self.window = window
-        window.makeKeyAndVisible()
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

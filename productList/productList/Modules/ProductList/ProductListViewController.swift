@@ -12,7 +12,8 @@ class ProductListViewController: UIViewController {
     
     // MARK: - Properties
     
-    var viewModel: ProductListViewModelProtocol? 
+    var viewModel: ProductListViewModelProtocol?
+    weak var coordinator: ProductListCoordinator?
     
     private var myView: ProductListView {
         // swiftlint:disable force_cast
@@ -46,7 +47,7 @@ class ProductListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "MVVM Improvements?"
+        title = "MVVM-Coordinator"
 
         // Inside SceneDelegate, this viewController is initialized without it's viewModel, so it is nil
         if viewModel == nil {
