@@ -35,6 +35,8 @@ class ProductListViewControllerTests: XCTestCase {
     }
 
     func testDelegateNotNil() {
+
+        // TODO: convenience init is, somehow, being called after viewDidLoad
         XCTAssertNotNil(sut.viewModel)
         XCTAssertNotNil(sut.viewModel?.delegate)
     }
