@@ -7,39 +7,26 @@
 
 import UIKit
 
+protocol ProductListViewControllerDelegate: AnyObject {
+    func reloadData()
+}
+
 /// ViewController is now only responsible for instanciating View and ViewModel
-class ProductListViewController: UIViewController {
-    
+class ProductListViewController: UIViewController, HasCustomView {
+
+    // MARK: - Typealias
+
+    typealias CustomView = ProductListView
+
     // MARK: - Properties
     
-    var viewModel: ProductListViewModelProtocol? 
-    
-    private var myView: ProductListView {
-        // swiftlint:disable force_cast
-        return view as! ProductListView
-        // swiftlint:enable force_cast
-    }
+    lazy var viewModel: ProductListViewModelProtocol? = ProductListViewModel(delegate: self)
 
-    /*
-     This code inside if DEBUG will compile only in DEBUG mode, not for the release
-     Since this convenience init is used only for unit test purposes
-     Alternative: expose a factoryMethod to construct the viewController on AppDelegate
-     */
-    #if DEBUG
-    // MARK: - Init
-    
-    // Inject the viewModel as well in order to test this viewController
-    convenience init(viewModel vm: ProductListViewModelProtocol) {
-        self.init(nibName: nil, bundle: nil)
-        
-        viewModel = vm
-    }
-    #endif
-    
     // MARK: - Life Cycle
 
     override func loadView() {
-        let myView = ProductListView()
+        super.loadView()
+        let myView = ProductListView(tableViewDelegate: self, tableviewDatasource: self)
         view = myView
     }
     
@@ -47,16 +34,39 @@ class ProductListViewController: UIViewController {
         super.viewDidLoad()
         
         title = "MVVM Improvements?"
+    }
+}
 
-        // Inside SceneDelegate, this viewController is initialized without it's viewModel, so it is nil
-        if viewModel == nil {
-            viewModel = ProductListViewModel()
+// Header, Footer, willDisplay, didSelectRowAt..
+extension ProductListViewController: UITableViewDelegate { }
+
+extension ProductListViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let viewModel = viewModel else { return 0 }
+        return viewModel.getCount()
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let viewModel = viewModel,
+              let productCell = tableView.dequeueReusableCell(cellClass: ProductListCell.self, indexPath: indexPath) else {
+            return UITableViewCell()
         }
 
-        // After the ViewControllers init, when the ProductListView is constructed,
-        // Only then set the viewModel's delegate
-        viewModel?.delegate = myView
-        myView.viewModel = viewModel
+        // The old View necessity to now the ProductListCellViewModel was removed
+        // All logic is created by the viewModel
+        let product = viewModel.getProduct(at: indexPath.row)
+        let cellViewModel = viewModel.createCellViewModel(from: product)
+        productCell.viewModel = cellViewModel
+
+        return productCell
     }
-    
+
+}
+
+extension ProductListViewController: ProductListViewControllerDelegate {
+
+    func reloadData() {
+        customView.reloadTableViewData()
+    }
 }

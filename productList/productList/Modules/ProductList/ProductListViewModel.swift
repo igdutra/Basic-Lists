@@ -10,7 +10,6 @@ import Foundation
 protocol ProductListViewModelProtocol {
     // Product doesn't need to be inside protocol
     // Neither does services
-    var delegate: ProductListViewModelDelegate? { get set }
     func getCount() -> Int
     func getProduct(at: Int) -> Product
     func createCellViewModel(from product: Product) -> ProductListCellViewModel
@@ -24,20 +23,19 @@ class ProductListViewModel: ProductListViewModelProtocol {
     private var services: ProductsServiceProtocol
     /// ViewModel's Delegate is the View
     /// Should be weak to avoid retain cycle
-    weak var delegate: ProductListViewModelDelegate? {
-        didSet {
-            // Be sure that delegate isn't nil when calling getProducts
-            getProducts()
-        }
-    }
+    private weak var delegate: ProductListViewControllerDelegate?
 
     // MARK: - Init
 
     // Delegate is always referenced after the init.
     // No need to be in init
-    init(services: ProductsServiceProtocol = ProductsService()) {
+    init(services: ProductsServiceProtocol = ProductsService(),
+         delegate: ProductListViewControllerDelegate?) {
         self.products = []
         self.services = services
+        self.delegate = delegate
+
+        getProducts()
     }
     
     // MARK: - Public Methods

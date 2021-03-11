@@ -36,6 +36,8 @@
 		92E1D10125A0C9A100A551B3 /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E1D10025A0C9A100A551B3 /* ProductsService.swift */; };
 		92F0E55C25A119EB0044616C /* ProductsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F0E55B25A119EB0044616C /* ProductsServiceTests.swift */; };
 		92FB5D8F25A1597800B5D816 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB5D8E25A1597800B5D816 /* AccessibilityIdentifiers.swift */; };
+		E0BFB52E25B7CD9A0003FE58 /* HasCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BFB52D25B7CD9A0003FE58 /* HasCustomView.swift */; };
+		E0BFB53325B7D7DF0003FE58 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BFB53225B7D7DF0003FE58 /* UITableView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		92E1D10025A0C9A100A551B3 /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
 		92F0E55B25A119EB0044616C /* ProductsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsServiceTests.swift; sourceTree = "<group>"; };
 		92FB5D8E25A1597800B5D816 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		E0BFB52D25B7CD9A0003FE58 /* HasCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasCustomView.swift; sourceTree = "<group>"; };
+		E0BFB53225B7D7DF0003FE58 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +260,7 @@
 				92E1D0E225A0BBE700A551B3 /* Constraints+Superview.swift */,
 				92E1D0F625A0C70600A551B3 /* Double+String.swift */,
 				92E1D0FB25A0C72400A551B3 /* UIImageView+URL.swift */,
+				E0BFB53225B7D7DF0003FE58 /* UITableView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				92E1D0DC25A0B2CE00A551B3 /* ViewCodable.swift */,
+				E0BFB52D25B7CD9A0003FE58 /* HasCustomView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0BFB52E25B7CD9A0003FE58 /* HasCustomView.swift in Sources */,
 				92E1D0DD25A0B2CE00A551B3 /* ViewCodable.swift in Sources */,
 				92DEBE3725A011ED006C5264 /* ProductListView.swift in Sources */,
 				92E1D0F225A0C6A000A551B3 /* Product.swift in Sources */,
@@ -469,6 +476,7 @@
 				9219E70D25A48FDD00B19FBF /* ProductListCellViewModel.swift in Sources */,
 				92344634259E7945002A2F26 /* ProductListViewController.swift in Sources */,
 				92E1D10125A0C9A100A551B3 /* ProductsService.swift in Sources */,
+				E0BFB53325B7D7DF0003FE58 /* UITableView+Extensions.swift in Sources */,
 				92344630259E7945002A2F26 /* AppDelegate.swift in Sources */,
 				9263623825A0E75B00ED2B68 /* ProductListViewModel.swift in Sources */,
 				92E1D0E325A0BBE700A551B3 /* Constraints.swift in Sources */,
