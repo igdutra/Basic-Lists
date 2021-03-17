@@ -12,7 +12,7 @@ import XCTest
 /// ViewModel calls reloadData() method only when result is success
 class ProductListViewModelMock: ProductListViewModelProtocol {
 
-    weak var delegate: ProductListViewModelDelegate?
+//    weak var delegate: ProductListViewModelProtocol?
 
     func getCount() -> Int { 1 }
 
@@ -25,7 +25,7 @@ class ProductListViewModelMock: ProductListViewModelProtocol {
             return ProductMock().getProduct()!
         } }
 
-    func createCellViewModel(from product: Product) -> ProductListCellViewModel { ProductListCellViewModel(product: product)}
+    func createCellViewModel(from product: Product) -> ProductListCellViewModelProtocol { ProductListCellViewModel(product: product)}
 
 }
 

@@ -23,4 +23,7 @@ opt_in_rules: # some rules are only opt-in
   - empty_parameters
   - void_return
   - closing_brace
-
+included:
+  - productList
+excluded:
+  - Pods
