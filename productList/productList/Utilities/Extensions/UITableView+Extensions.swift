@@ -9,11 +9,7 @@ import UIKit
 
 extension UITableView {
 
-    func dequeueReusableCell<T>(cellClass: T.Type, indexPath: IndexPath) -> T? {
+    public func dequeueReusableCell<T>(cellClass: T.Type, indexPath: IndexPath) -> T? {
         return dequeueReusableCell(withIdentifier: String(describing: T.self), for: indexPath) as? T
-    }
-
-    func register<T: UITableViewCell>(cellClass: T.Type) {
-        register(T.self, forCellReuseIdentifier: String(describing: T.self))
     }
 }

@@ -12,7 +12,7 @@ protocol ProductListViewModelProtocol {
     // Neither does services
     func getCount() -> Int
     func getProduct(at: Int) -> Product
-    func createCellViewModel(from product: Product) -> ProductListCellViewModel
+    func createCellViewModel(from product: Product) -> ProductListCellViewModelProtocol
 }
 
 class ProductListViewModel: ProductListViewModelProtocol {
@@ -68,7 +68,7 @@ class ProductListViewModel: ProductListViewModelProtocol {
     }
 
     /// So that the ProductListView doesn't need to call the constructor from ProductListCellViewModel
-    func createCellViewModel(from product: Product) -> ProductListCellViewModel {
+    func createCellViewModel(from product: Product) -> ProductListCellViewModelProtocol {
         ProductListCellViewModel(product: product)
     }
 }

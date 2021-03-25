@@ -45,7 +45,7 @@ extension ProductListView {
 extension ProductListView: ViewCodable {
     
     func configure() {
-        tableView.register(cellClass: ProductListCell.self)
+        tableView.register(ProductListCell.self, forCellReuseIdentifier: String(describing: ProductListCell.self))
     }
     
     func setupHierarchy() {
